@@ -1,90 +1,84 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+<title>Hi there</title>
+<style>
+	.big-button{
+		font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    height: 300px;
+    width: 500px;
+    font-size: 36px;
+	}
+</style>
+</head>
+<body>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <title>Zane Sonic on GitHub by zanesonic</title>
-    <style>
-        
-        #scratchbox{
-            width:100%;
-            text-align: center;
-        }
-
-        #scratchbox div{
-            background-color: white;
-            padding:10px;
-            margin: 5px;
-            float:left;
-        }
-    </style>
-
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>Zane Sonic on GitHub</h1>
-        <h2>kid coder</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/zanesonic" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h1>
-<div style="width:100%;text-align:center;margin: 0,0;font-size:46pt;font-weight:bolder;">
-<p>HERPA DERP</p>
+<div style="margin: 100px auto; width: 100%; height: 700px;text-align: center" id="start" id="start">
+	<button class="big-button" href="#" onClick="buttonClicked();">click me</button>
 </div>
-      </section>
-    </div>
 
-<div id="scratchbox">
+<div id="flower" style="display:none;">
+	<img src= "images/flower.jpg" />
 
-    <div>
-    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/1855629/" frameborder="0" allowfullscreen></iframe>
-    </div>   
-
-    <div>   
-        <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/908596/" frameborder="0" allowfullscreen></iframe>
-    </div> 
-
-    <div> <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/3147215/" frameborder="0" allowfullscreen></iframe>
-    </div>  
-    <div>
-    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/11186299/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div> <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/11148754/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div> <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/3146451/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div> <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/10397865/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div><iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/10208862/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div> <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/10128407/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div> <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/10579282/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div><iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/3313511/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div>  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/3055789/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div>  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/10138443/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div>  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/10352571/" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div>  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/10635937/" frameborder="0" allowfullscreen></iframe>
-    </div>
 </div>
-  </body>
+
+<div id="smiley" style="display:none;">
+	<img src= "images/smiley.jpg" />
+</div>
+
+
+<div id="slender" style="display:none;color:red">
+	<img src= "images/Slender.gif" style="width:100%; height:100%;"/>
+	<audio id="slender_sound" src="slender_static.mp3"></audio>
+</div>
+
+
+<script type="text/javascript" language="javsacript">
+	var startElem = document.getElementById("start");
+	var flowerElem = document.getElementById("flower");
+	var smileyElem = document.getElementById("smiley");
+	var slenderElem = document.getElementById('slender');
+	
+
+	function changePic(current, next){
+		current.style.display = "none";
+		next.style.display = "block";
+	}
+
+	function playSound(soundfile) {
+		document.getElementById("slender_sound").play();
+		 }
+
+	function startScaring(){
+		changePic(startElem, flowerElem);
+
+		setTimeout(function(){
+			changePic(flowerElem, smileyElem);
+
+			setTimeout(function(){
+				changePic(smileyElem, slenderElem);
+				playSound("slender_static.mp3");
+
+			}, 3000);
+			
+		}
+
+		,3000);
+	}
+
+	function buttonClicked(){
+		startScaring();
+	}
+
+
+</script>
+</body>
+
 </html>
